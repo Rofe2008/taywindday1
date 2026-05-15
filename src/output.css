@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-amber-50: oklch(98.7% 0.022 95.277);
     --color-amber-800: oklch(47.3% 0.137 46.201);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-900: oklch(37.9% 0.146 265.522);
@@ -16,8 +17,20 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-6xl: 3.75rem;
+    --text-6xl--line-height: 1;
     --text-7xl: 4.5rem;
     --text-7xl--line-height: 1;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
+    --text-9xl: 8rem;
+    --text-9xl--line-height: 1;
     --radius-2xl: 1rem;
     --radius-4xl: 2rem;
     --default-font-family: var(--font-sans);
@@ -173,8 +186,14 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
   .m-auto {
     margin: auto;
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
   }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
@@ -191,6 +210,9 @@
   .mt-\[-220px\] {
     margin-top: -220px;
   }
+  .mt-\[-270px\] {
+    margin-top: -270px;
+  }
   .mt-\[-300px\] {
     margin-top: -300px;
   }
@@ -200,17 +222,62 @@
   .mt-\[-\] {
     margin-top: -;
   }
+  .mt-\[200\] {
+    margin-top: 200;
+  }
+  .mt-\[200px\] {
+    margin-top: 200px;
+  }
   .ml-0 {
     margin-left: calc(var(--spacing) * 0);
   }
   .ml-400 {
     margin-left: calc(var(--spacing) * 400);
   }
+  .ml-\[30px\] {
+    margin-left: 30px;
+  }
   .ml-\[100px\] {
     margin-left: 100px;
   }
+  .ml-\[150px\] {
+    margin-left: 150px;
+  }
+  .ml-\[200\] {
+    margin-left: 200;
+  }
+  .ml-\[200px\] {
+    margin-left: 200px;
+  }
+  .ml-\[230px\] {
+    margin-left: 230px;
+  }
+  .ml-\[250px\] {
+    margin-left: 250px;
+  }
   .ml-\[300px\] {
     margin-left: 300px;
+  }
+  .ml-\[330px\] {
+    margin-left: 330px;
+  }
+  .ml-\[350px\] {
+    margin-left: 350px;
+  }
+  .ml-\[400px\] {
+    margin-left: 400px;
+  }
+  .ml-\[420px\] {
+    margin-left: 420px;
+  }
+  .ml-\[430px\] {
+    margin-left: 430px;
+  }
+  .ml-\[440px\] {
+    margin-left: 440px;
+  }
+  .ml-\[450px\] {
+    margin-left: 450px;
   }
   .ml-\[700px\] {
     margin-left: 700px;
@@ -227,6 +294,9 @@
   .h-\[3\\\\00px\] {
     height: 3\\00px;
   }
+  .h-\[100px\] {
+    height: 100px;
+  }
   .h-\[200px\] {
     height: 200px;
   }
@@ -235,6 +305,9 @@
   }
   .h-\[300px\] {
     height: 300px;
+  }
+  .w-\[1px\] {
+    width: 1px;
   }
   .w-\[100px\] {
     width: 100px;
@@ -256,6 +329,9 @@
   }
   .justify-between {
     justify-content: space-between;
+  }
+  .gap-0 {
+    gap: calc(var(--spacing) * 0);
   }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
@@ -294,6 +370,9 @@
   .bg-blue-900 {
     background-color: var(--color-blue-900);
   }
+  .bg-white {
+    background-color: var(--color-white);
+  }
   .p-\[4\] {
     padding: 4;
   }
@@ -306,12 +385,39 @@
   .p-\[px\] {
     padding: px;
   }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-6xl {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
   .text-7xl {
     font-size: var(--text-7xl);
     line-height: var(--tw-leading, var(--text-7xl--line-height));
   }
+  .text-8xl {
+    font-size: var(--text-8xl);
+    line-height: var(--tw-leading, var(--text-8xl--line-height));
+  }
+  .text-9xl {
+    font-size: var(--text-9xl);
+    line-height: var(--tw-leading, var(--text-9xl--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
   .text-\[30px\] {
     font-size: 30px;
+  }
+  .text-amber-50 {
+    color: var(--color-amber-50);
   }
   .text-black {
     color: var(--color-black);
